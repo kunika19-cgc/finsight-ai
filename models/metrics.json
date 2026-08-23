@@ -1,0 +1,44 @@
+{
+  "test_set_size": 9502,
+  "train_set_size": 38004,
+  "precision": 0.9343,
+  "recall": 0.9474,
+  "f1_score": 0.9408,
+  "roc_auc": 0.9965,
+  "confusion_matrix": {
+    "true_negative": 7901,
+    "false_positive": 100,
+    "false_negative": 79,
+    "true_positive": 1422
+  },
+  "false_positive_cost_estimate_usd": 132.7,
+  "false_negative_cost_estimate_usd": 41974.29,
+  "cost_assumptions": "FP cost assumes 2% of a wrongly-flagged genuine transaction's value is lost to customer friction / support overhead. FN cost assumes the full transaction amount is lost when fraud is missed. These are illustrative assumptions, not measured business figures.",
+  "feature_importances": {
+    "amt": 0.6453,
+    "hour": 0.1958,
+    "category_encoded": 0.1033,
+    "city_pop": 0.013,
+    "merch_lat": 0.0101,
+    "merch_long": 0.0098,
+    "lat": 0.0089,
+    "long": 0.0085,
+    "gender_encoded": 0.0054
+  },
+  "slice_checks": {
+    "high_amount_txns": {
+      "description": "Transactions above the 75th percentile amount (> $111.27)",
+      "n": 2376,
+      "precision": 0.9608,
+      "recall": 0.9931,
+      "f1": 0.9767
+    },
+    "night_hour_txns": {
+      "description": "Transactions between 12am-6am",
+      "n": 2097,
+      "precision": 0.9738,
+      "recall": 0.9793,
+      "f1": 0.9766
+    }
+  }
+}
