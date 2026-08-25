@@ -14,6 +14,15 @@ plain-English explanation of every decision.
 human/automated review. It never autonomously blocks, reverses, or
 retaliates against a transaction.
 
+## Architecture
+
+![FinSight AI architecture](docs/architecture.svg)
+
+An offline training pipeline (`train_model.py`) writes the model,
+encoders, and `metrics.json` to `/models`. The Streamlit app reads those
+artifacts directly at runtime — the dashboard never hardcodes a metric.
+Every live or batch prediction is logged to `logs/audit_trail.csv`.
+
 ## Screenshots
 
 <!--
