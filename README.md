@@ -148,7 +148,6 @@ fraud rate claim.
 pip install -r requirements.txt
 
 # (Re)train the model and generate metrics.json
-cd data-and-training  # wherever transactions_sample.csv + train_model.py live
 python train_model.py
 
 # Set up the LLM explanation layer (optional — the app works without it,
@@ -166,6 +165,7 @@ streamlit run app.py
 ├── app.py                  # Streamlit dashboard
 ├── train_model.py          # Training script — outputs model + metrics.json
 ├── test_llm.py             # Standalone script to verify the Groq API key/setup
+├── PITCH_SCRIPT.md         # 5-minute pitch video script
 ├── .env                    # GROQ_API_KEY (not committed — see .gitignore)
 ├── data/
 │   └── transactions_sample.csv
@@ -176,6 +176,8 @@ streamlit run app.py
 │   └── metrics.json
 ├── logs/
 │   └── audit_trail.csv     # Generated at runtime, one row per prediction
+├── docs/
+│   └── architecture.svg
 ├── requirements.txt
 └── runtime.txt
 ```
